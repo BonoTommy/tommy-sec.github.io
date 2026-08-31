@@ -122,7 +122,6 @@ Cette configuration réseau démontre :
 - la sécurisation du trafic grâce au pare‑feu Windows activé.
 
 ---
----
 
 ## 🔐 Sécurité – Pare‑feu Windows
 
@@ -161,10 +160,6 @@ Cette configuration démontre :
 - la mise en place d’un profil Public pour une sécurité renforcée ;
 - l’autorisation sélective du protocole ICMP pour les diagnostics réseau ;
 - la cohérence des règles entre les deux machines du laboratoire.
-
----
-
-
 
 
 ---
