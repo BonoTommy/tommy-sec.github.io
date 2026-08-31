@@ -66,7 +66,8 @@ Mettre en place un environnement Active Directory complet dans VirtualBox, en re
 ---
 
 ## 📸 Captures d’écran
-![Capture AD DS](host-only_vb.png)
+## 🧱
+
 
 
 ---
