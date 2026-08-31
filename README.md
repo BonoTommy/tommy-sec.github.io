@@ -66,7 +66,6 @@ Mettre en place un environnement Active Directory complet dans VirtualBox, en re
 ---
 
 ## 📸 Captures d’écran
----
 
 ## 🌐 Réseau & VirtualBox
 
