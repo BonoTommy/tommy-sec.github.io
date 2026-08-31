@@ -122,6 +122,47 @@ Cette configuration réseau démontre :
 - la sécurisation du trafic grâce au pare‑feu Windows activé.
 
 ---
+---
+
+## 🔐 Sécurité – Pare‑feu Windows
+
+Cette section présente la configuration du pare‑feu Windows sur les deux machines du laboratoire : DC01 (contrôleur de domaine) et PC‑Client.  
+L’objectif est de maintenir une sécurité maximale tout en permettant les tests ICMP nécessaires au diagnostic réseau.
+
+### 🧱 DC01 – Windows Server 2022
+
+Le profil **Public** est activé pour renforcer la sécurité du serveur.  
+Seule la règle **ICMPv4‑In** est autorisée afin de permettre les tests de connectivité.
+
+![Pare-feu DC01 – Profil Public](images/pare-feu_windows/public_DC01.png)
+> Pare‑feu Windows activé sur DC01 – profil Public actif.
+
+![Règle ICMPv4-In DC01](images/pare-feu_windows/icmpv4-in_DC01.png)
+> Autorisation ciblée du protocole ICMPv4‑In pour les tests de ping.
+
+---
+
+### 💻 PC‑Client – Windows 11
+
+Le pare‑feu est également activé sur le profil **Public**, avec la même règle ICMPv4‑In autorisée pour les diagnostics.
+
+![Pare-feu PC-Client](images/pare-feu_windows/pare-feu_pc.png)
+> Pare‑feu Windows activé sur le PC‑Client – profil Public actif.
+
+![Règle ICMPv4-In PC-Client](images/pare-feu_windows/icmpv4-in_pc.png)
+> Autorisation ICMPv4‑In sur le PC‑Client pour les tests de connectivité.
+
+---
+
+### 🧠 Résumé
+
+Cette configuration démontre :
+- la maîtrise du pare‑feu Windows sur serveur et poste client ;
+- la mise en place d’un profil Public pour une sécurité renforcée ;
+- l’autorisation sélective du protocole ICMP pour les diagnostics réseau ;
+- la cohérence des règles entre les deux machines du laboratoire.
+
+---
 
 
 
