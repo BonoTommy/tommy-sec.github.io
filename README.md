@@ -218,6 +218,71 @@ Cette installation démontre :
 
 ---
 
+## 👥 Création des utilisateurs et groupes dans ADUC
+
+Cette section illustre la configuration des unités d’organisation, des utilisateurs et des groupes dans Active Directory à l’aide de la console ADUC.
+
+### 🧭 Ouverture de la console ADUC
+![Console ADUC](images/aduc/console_aduc.png)
+> Console “Utilisateurs et ordinateurs Active Directory” ouverte sur le domaine *exemple.local*.
+
+---
+
+### 🗂️ Création d’une unité d’organisation
+Une unité d’organisation (OU) nommée **Employés** est créée pour regrouper les comptes utilisateurs.
+
+![Création de l’OU](images/aduc/unite_organisation.png)
+> Création de l’unité d’organisation “Employés”.
+
+![Arborescence du domaine](images/aduc/arborescence.png)
+> L’OU “Employés” apparaît dans l’arborescence du domaine.
+
+---
+
+### 👤 Création des utilisateurs
+Trois utilisateurs sont ajoutés à l’OU : **Alice Tremblay**, **Bob Gagnon** et **Charlie Dubois**.
+
+![Création d’un utilisateur](images/aduc/creation_utilisateur.png)
+> Fenêtre de création d’un utilisateur dans ADUC.
+
+![Liste des employés](images/aduc/3_employes.png)
+> Les trois utilisateurs créés apparaissent dans l’OU “Employés”.
+
+---
+
+### 🧩 Création des groupes
+Deux groupes sont créés pour organiser les permissions : **Groupe_IT** et **Groupe_RH**.
+
+![Création d’un groupe](images/aduc/creation_groupe.png)
+> Création du groupe “Groupe_IT” (type : sécurité, portée : globale).
+
+![Liste des groupes](images/aduc/2_groupes.png)
+> Les deux groupes visibles dans la console ADUC.
+
+---
+
+### 🔗 Ajout des utilisateurs aux groupes
+Les utilisateurs sont ensuite ajoutés aux groupes correspondants :
+- Alice et Charlie → Groupe_IT  
+- Bob → Groupe_RH
+
+![Ajout d’un utilisateur à un groupe](images/aduc/ajout_utilisateur_groupe.png)
+> Ajout d’un utilisateur au groupe via l’onglet “Membre de”.
+
+![Membres du groupe](images/aduc/membres.png)
+> Vérification des membres du groupe “Groupe_IT”.
+
+---
+
+### 🧠 Résumé
+Cette configuration démontre :
+- la création d’une structure logique dans Active Directory ;
+- la gestion des utilisateurs et des groupes ;
+- la mise en place d’une organisation claire pour les permissions et la sécurité.
+
+---
+
+
 
 ## 🧠 Compétences démontrées
 - Virtualisation (VirtualBox)
