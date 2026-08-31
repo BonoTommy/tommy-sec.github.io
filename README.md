@@ -163,6 +163,62 @@ Cette configuration démontre :
 
 ---
 
+## 🧱 Installation du rôle Active Directory Domain Services (AD DS)
+
+Cette section illustre l’installation du rôle AD DS sur le serveur DC01 et sa promotion en contrôleur de domaine.
+
+### ⚙️ Ajout du rôle AD DS
+Le rôle Active Directory Domain Services est ajouté via le Gestionnaire de serveur.
+
+![Ajout du rôle AD DS](images/ad_ds/ad_ds_installation.png)
+> Sélection du rôle AD DS dans l’assistant d’ajout de rôles et fonctionnalités.
+
+![Rôles et fonctionnalités cochés](images/ad_ds/roles_fonctionnalites.png)
+> Vérification des rôles et fonctionnalités nécessaires avant installation.
+
+![Installation en cours](images/ad_ds/installlation.png)
+> Progression de l’installation du rôle AD DS sur DC01.
+
+---
+
+### 🧩 Promotion du serveur en contrôleur de domaine
+Une fois le rôle installé, le serveur est promu pour créer une nouvelle forêt Active Directory.
+
+![Promotion du serveur](images/ad_ds/promouvoir.png)
+> Lancement de la promotion du serveur en contrôleur de domaine.
+
+![Nom du domaine](images/ad_ds/nom_domaine.png)
+> Définition du nom de domaine pour la nouvelle forêt (exemple : *exemple.local*).
+
+![Configuration du contrôleur](images/ad_ds/configuration_controleur.png)
+> Paramètres du contrôleur de domaine : niveau fonctionnel, mot de passe DSRM et options DNS.
+
+![Validation avant installation](images/ad_ds/ad_ds-checked.png)
+> Vérification des prérequis avant la promotion du serveur.
+
+---
+
+### 🧠 Vérification post‑installation
+Après redémarrage, le serveur DC01 est opérationnel comme contrôleur de domaine.
+
+![Contrôleur de domaine](images/ad_ds/controleur_domaine.png)
+> DC01 est maintenant le contrôleur de domaine de la forêt Active Directory.
+
+![Console ADUC](images/ad_ds/console_aduc.png)
+> Console “Utilisateurs et ordinateurs Active Directory” affichant le domaine configuré.
+
+---
+
+### 🧾 Résumé
+Cette installation démontre :
+- la maîtrise du rôle AD DS sous Windows Server 2022 ;
+- la création d’une forêt et d’un domaine fonctionnel ;
+- la promotion réussie du serveur DC01 en contrôleur de domaine ;
+- la validation de la configuration via la console ADUC.
+
+---
+
+
 ## 🧠 Compétences démontrées
 - Virtualisation (VirtualBox)
 - Administration Windows Server
