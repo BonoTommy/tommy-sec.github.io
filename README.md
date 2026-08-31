@@ -66,7 +66,63 @@ Mettre en place un environnement Active Directory complet dans VirtualBox, en re
 ---
 
 ## 📸 Captures d’écran
-## 🧱
+---
+
+## 🌐 Réseau & VirtualBox
+
+Cette section illustre la configuration réseau du laboratoire Active Directory dans VirtualBox.  
+L’objectif est de garantir une communication isolée et sécurisée entre le contrôleur de domaine (DC01) et le poste client.
+
+### ⚙️ Configuration du réseau VirtualBox
+Le réseau utilisé est de type **Host‑Only**, permettant une connexion directe entre les machines virtuelles sans accès Internet.
+
+![Réseau Host‑Only VirtualBox](images/reseau_virtualbox/host-only_vb.png)
+> Configuration du réseau Host‑Only dans VirtualBox – interface privée entre DC01 et PC‑Client.
+
+---
+
+### 🧩 Paramètres IP des machines
+**DC01 – Windows Server 2022**
+- IP : 192.168.56.10  
+- Masque : 255.255.255.0  
+- Profil : Public (pare‑feu activé)
+
+![Paramètres réseau DC01](images/reseau_virtualbox/parametre_reseau_DC01.png)
+> Paramètres IP statiques du contrôleur de domaine DC01.
+
+**PC‑Client – Windows 11**
+- IP : 192.168.56.1  
+- Masque : 255.255.255.0  
+- Profil : Public (pare‑feu activé)
+
+![Paramètres réseau PC‑Client](images/reseau_virtualbox/parametre_reseau_pc-client.png)
+> Paramètres IP statiques du poste client.
+
+---
+
+### 🔍 Vérification de la connectivité
+Les tests ARP et ping confirment la communication entre les deux machines.
+
+![ARP DC01](images/reseau_virtualbox/arp_DC01.png)
+> Table ARP de DC01 – les deux machines se voient sur le réseau Host‑Only.
+
+![Ping DC01](images/reseau_virtualbox/ping_DC01.png)
+> Test de ping depuis DC01 vers le PC‑Client.
+
+![Ping PC‑Client](images/reseau_virtualbox/ping_pc-client.png)
+> Test de ping depuis le PC‑Client vers DC01.
+
+---
+
+### 🧠 Résumé
+Cette configuration réseau démontre :
+- la maîtrise de VirtualBox et du mode Host‑Only ;
+- la mise en place d’adresses IP statiques cohérentes ;
+- la validation de la connectivité via ARP et ping ;
+- la sécurisation du trafic grâce au pare‑feu Windows activé.
+
+---
+
 
 
 
