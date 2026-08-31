@@ -282,6 +282,65 @@ Cette configuration démontre :
 
 ---
 
+## 🌐 Configuration DNS
+
+Cette section illustre la mise en place du service DNS sur le contrôleur de domaine DC01, essentiel au bon fonctionnement d’Active Directory.
+
+### ⚙️ Création de la zone directe
+![Zone directe DNS](images/dns/forward_lookup_zones.png)
+> Création de la zone de recherche directe pour le domaine *corp.local*.
+
+![Type de zone DNS](images/dns/zone_type.png)
+> Sélection du type de zone : Primary Zone.
+
+![Mode de réplication DNS](images/dns/mode_replication_dns.png)
+> Choix du mode de réplication DNS pour les contrôleurs du domaine *corp.local*.
+
+---
+
+### 🧩 Création de la zone inversée
+![Assistant New Zone Wizard](images/dns/new_zone_wizard.png)
+> Assistant de création d’une zone de recherche inversée IPv4.
+
+![Network ID](images/dns/network_id.png)
+> Définition du Network ID : 192.168.56.
+
+![Zone inversée créée](images/dns/56_168_192_in-addr_arpa.png)
+> Zone inversée 56.168.192.in‑addr.arpa créée avec succès.
+
+---
+
+### 🔧 Configuration de l’enregistrement PTR
+![Configuration PTR](images/dns/configuration_ptr.png)
+> Ajout d’un enregistrement PTR pour l’adresse IP 192.168.56.10 pointant vers *dc01.corp.local*.
+
+![Zone inversée avec PTR](images/dns/zone_inversee_ptr_visible.png)
+> Enregistrement PTR visible dans la zone inversée.
+
+---
+
+### 🧠 Vérification des enregistrements DNS
+![Vérification DNS](images/dns/verification_enregistrements_dns.png)
+> Vérification des enregistrements A et PTR dans la console DNS.
+
+---
+
+### 🧪 Tests de résolution DNS
+![Résolution directe](images/dns/ns_lookup_directe.png)
+> Test `nslookup dc01.corp.local` : résolution directe réussie.
+
+![Résolution inversée fonctionnelle](images/dns/resolution_inversee_fonctionnelle.png)
+> Test `nslookup 192.168.56.10` : résolution inversée fonctionnelle.
+
+---
+
+### 🧾 Résumé
+Cette configuration DNS démontre :
+- la création des zones directe et inversée ;
+- la mise en place d’un enregistrement PTR pour DC01 ;
+- la validation de la résolution directe et inversée via `nslookup`.
+
+---
 
 
 ## 🧠 Compétences démontrées
