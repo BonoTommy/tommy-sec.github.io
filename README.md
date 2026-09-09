@@ -46,7 +46,7 @@ Mettre en place un environnement Active Directory complet dans VirtualBox, en re
 ## 🌐 Réseau & VirtualBox
 
 ### ⚙️ Configuration du réseau Host‑Only
-![Réseau Host‑Only VirtualBox](images/reseau_virtualbox/host-only-vb.png)
+![Réseau Host‑Only VirtualBox](images/reseau_virtualbox/host-only.png)
 
 ---
 
