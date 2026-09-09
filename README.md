@@ -347,10 +347,10 @@ Cette configuration DNS démontre :
 Pour structurer le domaine `corp.local`, plusieurs OU ont été créées afin de séparer les objets selon leur rôle.
 
 ### 📸 Capture – Création d’une OU
-![Création d’une OU](images/order_organisational_unit.png)
+![Création d’une OU](images/jonction_pc_client/order_organisational_unit.png)
 
 ### 📸 Capture – OU visibles dans le domaine
-![Affichage des OU](images/corp_local_computers.png)
+![Affichage des OU](images/jonction_pc_client/corp_local_computers.png)
 
 ---
 
@@ -359,10 +359,10 @@ Pour structurer le domaine `corp.local`, plusieurs OU ont été créées afin de
 Des utilisateurs ont été créés dans l’OU `CORP-Users` pour représenter les employés du domaine.
 
 ### 📸 Capture – Création d’un utilisateur
-![Création d’un utilisateur](images/creation_compte_local.png)
+![Création d’un utilisateur](images/jonction_pc_client/creation_compte_local.png)
 
 ### 📸 Capture – Vérification du compte
-![Vérification du compte](images/system_about.png)
+![Vérification du compte](images/jonction_pc_client/system_about.png)
 
 ---
 
@@ -371,38 +371,9 @@ Des utilisateurs ont été créés dans l’OU `CORP-Users` pour représenter le
 Des groupes de sécurité ont été créés pour organiser les permissions selon les rôles.
 
 ### 📸 Capture – Création d’un groupe
-![Création d’un groupe](images/creation_vm_pc.png)
+![Création d’un groupe](images/jonction_pc_client/creation_vm_pc.png)
 
-### 📸 Capture – Configuration réseau du domaine
-![Configuration DNS](images/forward_new_host.png)
-
----
-
-## 🔐 4. Attribution des permissions
-
-Les utilisateurs ont été ajoutés dans les groupes appropriés, puis les permissions ont été attribuées selon la logique :
-
-**Utilisateurs → Groupes → Permissions**
-
-### 📸 Capture – Jonction du client au domaine
-![Jonction au domaine](images/join_device_active_directory_domain.png)
-
-### 📸 Capture – Test de communication avec le DC
-![Ping DC01](images/ping_dc01.png)
-
-### 📸 Capture – Test DNS réussi
-![NSLookup réussi](images/ns_lookup_reussi.png)
-
----
-
-## 🖥️ 5. Déplacement du poste dans l’OU CORP-Workstations
-
-Après la jonction au domaine, le poste client a été déplacé dans l’OU dédiée aux postes de travail.
-
-### 📸 Capture – PC-Client-W11Pro dans l’OU CORP-Workstations
-![Poste dans l’OU CORP-Workstations](images/corp_workstations_pcclient.png)
-
----
+### 📸 Capture – Configuration
 
 ## 🧠 Résumé
 
