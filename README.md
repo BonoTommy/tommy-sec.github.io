@@ -340,90 +340,87 @@ Cette configuration DNS démontre :
 - la mise en place d’un enregistrement PTR pour DC01 ;
 - la validation de la résolution directe et inversée via `nslookup`.
 
-# 🧩 Étape 4 – Configuration Active Directory
+# 🧩 Étape 4 – Configuration Active Directory
 
 ## 📁 1. Création des unités d’organisation (OU)
-**Objectif :** structurer le domaine `corp.local` pour séparer les objets selon leur rôle.
 
-**Procédure :**
-- Ouverture de **Active Directory Users and Computers**
-- Clic droit sur `corp.local` → *New → Organizational Unit*
-- Création des OU suivantes :
-  - `CORP‑Workstations`
-  - `CORP‑Servers`
-  - `CORP‑Users`
-  - `CORP‑IT`
+Pour structurer le domaine `corp.local`, plusieurs OU ont été créées afin de séparer les objets selon leur rôle.
 
-**Captures :**
-- `order_organisational_unit.png` → création de l’OU
-- `corp_local_computers.png` → affichage du domaine et des OU
+### 📸 Capture – Création d’une OU
+![Création d’une OU](images/order_organisational_unit.png)
+
+### 📸 Capture – OU visibles dans le domaine
+![Affichage des OU](images/corp_local_computers.png)
 
 ---
 
 ## 👥 2. Création des utilisateurs
-**Objectif :** ajouter des comptes de test pour la gestion du domaine.
 
-**Procédure :**
-- Dans l’OU `CORP‑Users` → *New → User*
-- Création des comptes :
-  - `Alice Tremblay`
-  - `Bob Gagnon`
-  - `Charlie Dubois`
-- Attribution de mots de passe et options de connexion.
+Des utilisateurs ont été créés dans l’OU `CORP-Users` pour représenter les employés du domaine.
 
-**Captures :**
-- `creation_compte_local.png` → création d’un utilisateur
-- `system_about.png` → vérification du compte
+### 📸 Capture – Création d’un utilisateur
+![Création d’un utilisateur](images/creation_compte_local.png)
+
+### 📸 Capture – Vérification du compte
+![Vérification du compte](images/system_about.png)
 
 ---
 
 ## 🧩 3. Création des groupes
-**Objectif :** regrouper les utilisateurs par service ou rôle.
 
-**Procédure :**
-- Dans l’OU `CORP‑IT` → *New → Group*
-- Création des groupes :
-  - `Groupe_IT` (type : Security, portée : Global)
-  - `Groupe_RH` (type : Security, portée : Global)
-- Ajout des utilisateurs dans les groupes via *Member Of*.
+Des groupes de sécurité ont été créés pour organiser les permissions selon les rôles.
 
-**Captures :**
-- `creation_vm_pc.png` → exemple de création
-- `forward_new_host.png` → configuration réseau du domaine
+### 📸 Capture – Création d’un groupe
+![Création d’un groupe](images/creation_vm_pc.png)
+
+### 📸 Capture – Configuration réseau du domaine
+![Configuration DNS](images/forward_new_host.png)
 
 ---
 
 ## 🔐 4. Attribution des permissions
-**Objectif :** appliquer la logique “Users → Groups → Permissions”.
 
-**Procédure :**
-- Ajout des groupes dans les ACL des dossiers partagés.
-- Vérification des droits via les propriétés de sécurité.
-- Test de connexion avec un utilisateur membre du groupe.
+Les utilisateurs ont été ajoutés dans les groupes appropriés, puis les permissions ont été attribuées selon la logique :
 
-**Captures :**
-- `join_device_active_directory_domain.png` → jonction du client au domaine
-- `ping_dc01.png` → validation de la communication avec le DC
-- `ns_lookup_reussi.png` → test DNS réussi
+**Utilisateurs → Groupes → Permissions**
+
+### 📸 Capture – Jonction du client au domaine
+![Jonction au domaine](images/join_device_active_directory_domain.png)
+
+### 📸 Capture – Test de communication avec le DC
+![Ping DC01](images/ping_dc01.png)
+
+### 📸 Capture – Test DNS réussi
+![NSLookup réussi](images/ns_lookup_reussi.png)
+
+---
+
+## 🖥️ 5. Déplacement du poste dans l’OU CORP-Workstations
+
+Après la jonction au domaine, le poste client a été déplacé dans l’OU dédiée aux postes de travail.
+
+### 📸 Capture – PC-Client-W11Pro dans l’OU CORP-Workstations
+![Poste dans l’OU CORP-Workstations](images/corp_workstations_pcclient.png)
 
 ---
 
 ## 🧠 Résumé
+
 | Élément | Statut | Capture clé |
-|----------|---------|--------------|
-| Création des OU | ✅ | `order_organisational_unit.png` |
-| Création des utilisateurs | ✅ | `creation_compte_local.png` |
-| Création des groupes | ✅ | `creation_vm_pc.png` |
-| Attribution des permissions | ✅ | `join_device_active_directory_domain.png` |
+|--------|--------|--------------|
+| Création des OU | ✅ | order_organisational_unit.png |
+| Création des utilisateurs | ✅ | creation_compte_local.png |
+| Création des groupes | ✅ | creation_vm_pc.png |
+| Attribution des permissions | ✅ | join_device_active_directory_domain.png |
+| Déplacement du poste dans l’OU | ✅ | corp_workstations_pcclient.png |
 
 ---
 
-## 🧩 Validation finale
+## ✔️ Validation finale
+
 L’étape 4 est **terminée avec succès**.  
-Le domaine `corp.local` est structuré, les utilisateurs et groupes sont créés, et les permissions sont attribuées.  
-Le poste client **PC‑Client‑W11Pro** est joint au domaine et déplacé dans l’OU **CORP‑Workstations**.
+Le domaine `corp.local` est structuré, les utilisateurs et groupes sont créés, les permissions sont attribuées, et le poste client est correctement intégré dans l’OU.
 
----
 
 
 
