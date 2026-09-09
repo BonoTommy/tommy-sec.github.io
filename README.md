@@ -347,7 +347,7 @@ Cette configuration DNS démontre :
 Pour structurer le domaine `corp.local`, plusieurs OU ont été créées afin de séparer les objets selon leur rôle.
 
 ### 📸 Capture – Création d’une OU
-![Création d’une OU](images/jonction_pc_client/direct_organisation_unit.png)
+! [Création d’une OU] (images/jonction_pc_client/direct_organisation_unit.png)
 
 ### 📸 Capture – OU visibles dans le domaine
 ![Affichage des OU](images/jonction_pc_client/config_local_computers.png)
