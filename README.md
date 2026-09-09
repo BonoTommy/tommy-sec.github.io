@@ -347,10 +347,10 @@ Cette configuration DNS démontre :
 Pour structurer le domaine `corp.local`, plusieurs OU ont été créées afin de séparer les objets selon leur rôle.
 
 ### 📸 Capture – Création d’une OU
-![Création d’une OU](images/jonction_pc_client/order_organisational_unit.png)
+![Création d’une OU](images/jonction_pc_client/direct_organisation_unit.png)
 
 ### 📸 Capture – OU visibles dans le domaine
-![Affichage des OU](images/jonction_pc_client/corp_local_computers.png)
+![Affichage des OU](images/jonction_pc_client/config_local_computers.png)
 
 ---
 
@@ -359,10 +359,10 @@ Pour structurer le domaine `corp.local`, plusieurs OU ont été créées afin de
 Des utilisateurs ont été créés dans l’OU `CORP-Users` pour représenter les employés du domaine.
 
 ### 📸 Capture – Création d’un utilisateur
-![Création d’un utilisateur](images/jonction_pc_client/creation_compte_local.png)
+![Création d’un utilisateur](images/jonction_pc_client/creation_comp_local.png)
 
 ### 📸 Capture – Vérification du compte
-![Vérification du compte](images/jonction_pc_client/system_about.png)
+![Vérification du compte](images/jonction_pc_client/system_adsetup.png)
 
 ---
 
@@ -371,26 +371,20 @@ Des utilisateurs ont été créés dans l’OU `CORP-Users` pour représenter le
 Des groupes de sécurité ont été créés pour organiser les permissions selon les rôles.
 
 ### 📸 Capture – Création d’un groupe
-![Création d’un groupe](images/jonction_pc_client/creation_vm_pc.png)
+![Création d’un groupe](images/jonction_pc_client/creation_vm.png)
 
-### 📸 Capture – Configuration
-
-## 🧠 Résumé
-
-| Élément | Statut | Capture clé |
-|--------|--------|--------------|
-| Création des OU | ✅ | order_organisational_unit.png |
-| Création des utilisateurs | ✅ | creation_compte_local.png |
-| Création des groupes | ✅ | creation_vm_pc.png |
-| Attribution des permissions | ✅ | join_device_active_directory_domain.png |
-| Déplacement du poste dans l’OU | ✅ | corp_workstations_pcclient.png |
+### 📸 Capture – Configuration DNS
+![Configuration DNS](images/jonction_pc_client/forward_new_hosting.png)
 
 ---
 
-## ✔️ Validation finale
+## 🔐 4. Attribution des permissions
 
-L’étape 4 est **terminée avec succès**.  
-Le domaine `corp.local` est structuré, les utilisateurs et groupes sont créés, les permissions sont attribuées, et le poste client est correctement intégré dans l’OU.
+Les utilisateurs ont été ajoutés dans les groupes appropriés, puis les permissions ont été attribuées selon la logique :
+
+**Utilisateurs → Groupes → Permissions**
+
+### 📸 Capture
 
 
 
