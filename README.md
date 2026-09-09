@@ -340,7 +340,92 @@ Cette configuration DNS démontre :
 - la mise en place d’un enregistrement PTR pour DC01 ;
 - la validation de la résolution directe et inversée via `nslookup`.
 
+# 🧩 Étape 4 – Configuration Active Directory
+
+## 📁 1. Création des unités d’organisation (OU)
+**Objectif :** structurer le domaine `corp.local` pour séparer les objets selon leur rôle.
+
+**Procédure :**
+- Ouverture de **Active Directory Users and Computers**
+- Clic droit sur `corp.local` → *New → Organizational Unit*
+- Création des OU suivantes :
+  - `CORP‑Workstations`
+  - `CORP‑Servers`
+  - `CORP‑Users`
+  - `CORP‑IT`
+
+**Captures :**
+- `order_organisational_unit.png` → création de l’OU
+- `corp_local_computers.png` → affichage du domaine et des OU
+
 ---
+
+## 👥 2. Création des utilisateurs
+**Objectif :** ajouter des comptes de test pour la gestion du domaine.
+
+**Procédure :**
+- Dans l’OU `CORP‑Users` → *New → User*
+- Création des comptes :
+  - `Alice Tremblay`
+  - `Bob Gagnon`
+  - `Charlie Dubois`
+- Attribution de mots de passe et options de connexion.
+
+**Captures :**
+- `creation_compte_local.png` → création d’un utilisateur
+- `system_about.png` → vérification du compte
+
+---
+
+## 🧩 3. Création des groupes
+**Objectif :** regrouper les utilisateurs par service ou rôle.
+
+**Procédure :**
+- Dans l’OU `CORP‑IT` → *New → Group*
+- Création des groupes :
+  - `Groupe_IT` (type : Security, portée : Global)
+  - `Groupe_RH` (type : Security, portée : Global)
+- Ajout des utilisateurs dans les groupes via *Member Of*.
+
+**Captures :**
+- `creation_vm_pc.png` → exemple de création
+- `forward_new_host.png` → configuration réseau du domaine
+
+---
+
+## 🔐 4. Attribution des permissions
+**Objectif :** appliquer la logique “Users → Groups → Permissions”.
+
+**Procédure :**
+- Ajout des groupes dans les ACL des dossiers partagés.
+- Vérification des droits via les propriétés de sécurité.
+- Test de connexion avec un utilisateur membre du groupe.
+
+**Captures :**
+- `join_device_active_directory_domain.png` → jonction du client au domaine
+- `ping_dc01.png` → validation de la communication avec le DC
+- `ns_lookup_reussi.png` → test DNS réussi
+
+---
+
+## 🧠 Résumé
+| Élément | Statut | Capture clé |
+|----------|---------|--------------|
+| Création des OU | ✅ | `order_organisational_unit.png` |
+| Création des utilisateurs | ✅ | `creation_compte_local.png` |
+| Création des groupes | ✅ | `creation_vm_pc.png` |
+| Attribution des permissions | ✅ | `join_device_active_directory_domain.png` |
+
+---
+
+## 🧩 Validation finale
+L’étape 4 est **terminée avec succès**.  
+Le domaine `corp.local` est structuré, les utilisateurs et groupes sont créés, et les permissions sont attribuées.  
+Le poste client **PC‑Client‑W11Pro** est joint au domaine et déplacé dans l’OU **CORP‑Workstations**.
+
+---
+
+
 
 
 ## 🧠 Compétences démontrées
