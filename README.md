@@ -24,22 +24,8 @@ Mettre en place un environnement Active Directory complet dans VirtualBox, en re
 
 **PC‑Client – Windows 11**
 - Rôle : Client du domaine  
-- IP : 192.168.56.1  
+- IP : 192.168.56.20  
 - Réseau : Host‑Only
-
----
-
-## 🔍 Étapes techniques
-
-1. Configuration réseau  
-2. Sécurité : Pare‑feu Windows  
-3. Installation AD DS  
-4. Configuration Active Directory  
-5. Configuration DNS  
-6. Tests de connectivité et de résolution  
-7. Jonction du client au domaine  
-8. Attribution des permissions  
-9. Validation finale
 
 ---
 
@@ -52,10 +38,10 @@ Mettre en place un environnement Active Directory complet dans VirtualBox, en re
 
 ### 🧩 Paramètres IP des machines
 
-**DC01 – Windows Server 2022**
+**DC01 – Windows Server 2022**  
 ![Paramètres réseau DC01](images/reseau_virtualbox/parametre_reseau_DC01.png)
 
-**PC‑Client – Windows 11**
+**PC‑Client – Windows 11**  
 ![Paramètres réseau PC‑Client](images/reseau_virtualbox/parametre_reseau_pc-client.png)
 
 ---
@@ -71,13 +57,13 @@ Mettre en place un environnement Active Directory complet dans VirtualBox, en re
 
 ### 🧱 DC01 – Windows Server 2022
 ![Pare‑feu DC01 – Profil Public](images/pare-feu_windows/public_DC01.png)
-![Règle ICMPv4‑In DC01](images/pare-feu_windows/icmpv4-in-DC01.png)
+![Règle ICMPv4‑In DC01](images/pare-feu_windows/icmpv4-in_DC01.png)
 
 ---
 
 ### 💻 PC‑Client – Windows 11
 ![Pare‑feu PC‑Client](images/pare-feu_windows/pare-feu_pc.png)
-![Règle ICMPv4‑In PC‑Client](images/pare-feu_windows/icmpv4-in-pc.png)
+![Règle ICMPv4‑In PC‑Client](images/pare-feu_windows/icmpv4-in_pc.png)
 
 ---
 
@@ -112,4 +98,80 @@ Mettre en place un environnement Active Directory complet dans VirtualBox, en re
 ---
 
 ### 🗂️ Création d’une unité d’organisation
-![Création de l’OU](images/aduc
+![Création de l’OU](images/aduc/unite_organisation.png)
+![Arborescence du domaine](images/aduc/arborescence.png)
+
+---
+
+### 👤 Création des utilisateurs
+![Création d’un utilisateur](images/aduc/creation_utilisateur.png)
+![Liste des employés](images/aduc/3_employes.png)
+
+---
+
+### 🧩 Création des groupes
+![Création d’un groupe](images/aduc/creation_groupe.png)
+![Liste des groupes](images/aduc/2_groupes.png)
+
+---
+
+### 🔗 Ajout des utilisateurs aux groupes
+![Ajout d’un utilisateur à un groupe](images/aduc/ajout_utilisateur_groupe.png)
+![Membres du groupe](images/aduc/membres.png)
+
+---
+
+## 🌐 Configuration DNS
+
+### ⚙️ Création de la zone directe
+![Zone directe DNS](images/dns/forward_lookup_zones.png)
+![Type de zone DNS](images/dns/zone_type.png)
+![Mode de réplication DNS](images/dns/mode_replication_dns.png)
+
+---
+
+### 🧩 Création de la zone inversée
+![Assistant New Zone Wizard](images/dns/new_zone_wizard.png)
+![Network ID](images/dns/network_id.png)
+![Zone inversée créée](images/dns/56_168_192_in-addr_arpa.png)
+
+---
+
+### 🔧 Configuration de l’enregistrement PTR
+![Configuration PTR](images/dns/configuration_ptr.png)
+![Zone inversée avec PTR](images/dns/zone_inverse_ptr_visible.png)
+
+---
+
+### 🧠 Vérification des enregistrements DNS
+![Vérification DNS](images/dns/verification_enregistrements_dns.png)
+
+---
+
+### 🧪 Tests de résolution DNS
+![Résolution directe](images/dns/ns_lookup_directe.png)
+![Résolution inversée fonctionnelle](images/dns/resolution_inversee_fonctionnelle.png)
+
+---
+
+## 🧩 Création du poste client et intégration DNS
+![Création du poste client dans VirtualBox](images/jonction_pc_client/creation_vm_pc.png)
+![Configuration DNS du poste client](images/jonction_pc_client/forward_new_host.png)
+
+---
+
+## 🔐 Attribution des permissions
+![Ajout des permissions](images/jonction_pc_client/join_device_active_directory_domain.png)
+
+---
+
+## 🧠 Compétences démontrées
+- Virtualisation (VirtualBox)  
+- Administration Windows Server  
+- Active Directory  
+- DNS  
+- Sécurité Windows  
+- GPO  
+- Documentation professionnelle  
+
+---
